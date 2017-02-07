@@ -1,43 +1,4 @@
 <div class="ui top menu">
   <a class="item">Business Contacts</a>
 </div>
-<div class="ui grid">
-  <div class="row">
-    <div class="twelve wide column">
-      <div class="ui segment">
-        <table class="ui yellow striped celled table">
-          <thead>
-            <tr>
-              <th>Company</th>
-              <th>Category</th>
-              <th>Phone</th>
-              <th>&nbsp;</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let business of businesses">
-              <td>{{business.company}}</td>
-              <td>{{business.category}}</td>
-              <td>{{business.phone}}</td>
-              <td>
-                <button (click)="changeState('extend', business.$key)" class="ui button blue tiny" aria-label="More">
-                  ....
-                </button>
-                <button class="ui icon button tiny" aria-label="Edit">
-                  <i class="edit icon"></i>
-                </button>
-                <button class="ui icon button red tiny" aria-label="Delete">
-                  <i class="remove icon"></i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-
-
-
-</div>
+<app-contactslist></app-contactslist>

@@ -61,6 +61,14 @@
   dependencies:
     tsickle "^0.2"
 
+"@ngrx/core@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/core/-/core-1.2.0.tgz#882b46abafa2e0e6d887cb71a1b2c2fa3e6d0dc6"
+
+"@ngrx/store@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-2.2.1.tgz#316ec1e43aa5a0166e5e6e1aa2c34a4049386510"
+
 "@ngtools/json-schema@^1.0.0":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.0.2.tgz#d4158c66ef2bf6db74fd507376cda5bddd0281fb"
@@ -3365,10 +3373,6 @@ negotiator@0.4.9:
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
-
-"ng-semantic@https://github.com/BennyFranco/ngSemantic/tarball/angular-cli":
-  version "1.1.13"
-  resolved "https://github.com/BennyFranco/ngSemantic/tarball/angular-cli#4d70da41b2cd2adff5cf736554f281d823229b92"
 
 no-case@^2.2.0:
   version "2.3.1"

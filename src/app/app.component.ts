@@ -1,35 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from './services/firebase.service';
-import { Category } from './models/Category';
-import { Business } from './models/Business';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [FirebaseService]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  businesses: Business[];
-  categories: Category[];
   appState: string;
   activeKey: string;
 
-  constructor(private _firebaseService: FirebaseService) {
+  constructor() {
   }
 
-  ngOnInit() {
-    this._firebaseService.getBusinesses().subscribe(
-      businesses => {
-        this.businesses = businesses;
-      }
-    );
-    this._firebaseService.getCategories().subscribe(
-      categories => {
-        this.categories = categories;
-      }
-    );
-  }
+ ngOnInit() {}
 
   changeState(state, key) {
     console.log('Changing state to: ' + state);
