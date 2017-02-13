@@ -1,4 +1,11 @@
+import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
+import { Business } from './models/Business';
+
+export interface AppState {
+  contacts: Business[];
+  selectedContact: Business;
+}
 
 @Component({
   selector: 'app-root',
@@ -9,10 +16,11 @@ export class AppComponent implements OnInit {
   appState: string;
   activeKey: string;
 
-  constructor() {
+  constructor(private store: Store<AppState>) {
+    
   }
 
- ngOnInit() {}
+  ngOnInit() {}
 
   changeState(state, key) {
     console.log('Changing state to: ' + state);

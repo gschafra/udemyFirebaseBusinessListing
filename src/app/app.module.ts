@@ -2,11 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { ContactslistComponent } from './components/contactslist/contactslist.component';
+import { contactsReducer } from './reducers/contacts';
+import { selectedContactReducer } from './reducers/selectedContact';
 
 // Must export the config
 export const firebaseConfig = {
@@ -26,7 +29,9 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    StoreModule.provideStore({ contacts: contactsReducer }),
+    StoreModule.provideStore({ selectedContact: selectedContactReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]
