@@ -17,7 +17,6 @@ export class AppComponent implements OnInit {
   activeKey: string;
 
   constructor(private store: Store<AppState>) {
-    
   }
 
   ngOnInit() {}

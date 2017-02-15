@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import 'rxjs/add/operator/map';
@@ -6,15 +7,17 @@ import { Category } from '../models/Category';
 
 @Injectable()
 export class FirebaseService {
-    businesses: FirebaseListObservable<Business[]>;
+    //businesses: FirebaseListObservable<Business[]>;
+    businesses: Observable<Array<Business>>;
     categories: FirebaseListObservable<Category[]>;
 
     constructor(private _af: AngularFire) {
-
+        this.businesses = this._af.database.list('/businesses');
     }
 
     getBusinesses() {
-        this.businesses = this._af.database.list('/businesses') as FirebaseListObservable<Business[]>;
+        //this.businesses = this._af.database.list('/businesses') as FirebaseListObservable<Business[]>;
+        this.businesses = this._af.database.list('/businesses');
         return this.businesses;
     }
 
