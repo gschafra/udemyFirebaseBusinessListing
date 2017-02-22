@@ -25,12 +25,14 @@ export class ContactslistComponent implements OnInit {
       }
     );*/
     this.businesses = this._firebaseService.businesses;
-    this._firebaseService.getCategories().subscribe(
+    /*this._firebaseService.getCategories().subscribe(
       categories => {
         this.categories = categories;
         this._cd.markForCheck();
       }
-    );
+    );*/
+    console.log(this.businesses);
+    this._firebaseService.loadBusinesses();
   }
 
   changeState(state, key) {

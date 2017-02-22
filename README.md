@@ -1,6 +1,11 @@
 # UdemyFirebaseBusinessListing
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
+It's based on
+http://onehungrymind.com/build-better-angular-2-application-redux-ngrx/
+https://egghead.io/lessons/angular-2-ngrx-store-in-10-minutes
+https://egghead.io/lessons/javascript-redux-avoiding-array-mutations-with-concat-slice-and-spread?series=getting-started-with-redux
+
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
