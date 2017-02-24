@@ -31,7 +31,7 @@ export class ContactslistComponent implements OnInit {
         this._cd.markForCheck();
       }
     );*/
-    console.log(this.businesses);
+    console.log('yow');
     this._firebaseService.loadBusinesses();
   }
 

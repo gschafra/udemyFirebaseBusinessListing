@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import { Business } from '../models/Business';
 import { Category } from '../models/Category';
 import { Store } from '@ngrx/store';
+import { ADD_CONTACTS } from '../reducers/contacts';
 
 @Injectable()
 export class FirebaseService {
@@ -15,6 +16,7 @@ export class FirebaseService {
     constructor(private _af: AngularFire, private _store: Store<Business>) {
         //this.businesses = this._af.database.list('/businesses');
         this.businesses = this._store.select('contacts');
+        this.businesses.subscribe(v => console.log(v));
     }
 
     getBusinesses() {
@@ -26,8 +28,8 @@ export class FirebaseService {
     loadBusinesses() {
         console.log('loadBusinesses');
         this._af.database.list('/businesses').subscribe((businesses: Business[]) => {
-            console.log(businesses);
-            this._store.dispatch({type: 'ADD_CONTACTS', payload: businesses});
+            console.log('beforeDispatch');
+            this._store.dispatch({type: ADD_CONTACTS, payload: businesses});
         });
     }
 
