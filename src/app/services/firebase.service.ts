@@ -15,7 +15,7 @@ export class FirebaseService {
 
     constructor(private _af: AngularFire, private _store: Store<Business>) {
         //this.businesses = this._af.database.list('/businesses');
-        this.businesses = this._store.select('contacts');
+        this.businesses = _store.select('contacts');
         this.businesses.subscribe(v => console.log(v));
     }
 
@@ -29,6 +29,7 @@ export class FirebaseService {
         console.log('loadBusinesses');
         this._af.database.list('/businesses').subscribe((businesses: Business[]) => {
             console.log('beforeDispatch');
+            console.log(businesses);
             this._store.dispatch({type: ADD_CONTACTS, payload: businesses});
         });
     }
