@@ -1,11 +1,11 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import { Business } from '../models/Business';
+import { Business } from '../models/business.model';
 
 export const ADD_CONTACTS = 'ADD_CONTACTS';
 export const REMOVE_CONTACT = 'REMOVE_CONTACT';
 export const ADD_CONTACT = 'ADD_CONTACT';
 
-export const contactsReducer = (state: Business[] = [], action: Action) => {
+export function contactsReducer(state: any = [], action: Action): Business[] {
     console.log('contactsReducer');
     switch (action.type) {
         case ADD_CONTACTS:

@@ -1,22 +1,25 @@
+import { Observable } from 'rxjs/Rx';
 import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
-import { Business } from './models/Business';
-
-export interface AppState {
-  contacts: Business[];
-  selectedContact: Business;
-}
+import { Business } from './models/business.model';
+import { AppStore } from './models/appstore.model';
+import { FirebaseService } from './services/firebase.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [FirebaseService]
 })
 export class AppComponent implements OnInit {
   appState: string;
   activeKey: string;
+  businesses: Observable<Array<Business>>;
 
-  constructor(private store: Store<AppState>) {
+  constructor(private _firebaseService: FirebaseService, private _store: Store<AppStore>) {
+    this.businesses = _store.select('contacts');
+    this.businesses.subscribe(v => console.log(v));
+    this._firebaseService.loadBusinesses();
   }
 
   ngOnInit() {}
