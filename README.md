@@ -1,5 +1,7 @@
 # UdemyFirebaseBusinessListing
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/gschafra/udemyFirebaseBusinessListing.svg)](https://greenkeeper.io/)
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
 It's based on
 http://onehungrymind.com/build-better-angular-2-application-redux-ngrx/
